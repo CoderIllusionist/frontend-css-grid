@@ -1,1 +1,69 @@
 /*Maak hier jouw CSS!*/
+.container {
+    display: grid;
+    row-gap: 16px;
+    column-gap: 16px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    grid-template-areas:
+
+            "aside-left"
+            "contenter"
+            "aside-right-large"
+            "aside-right-small"
+            "aside-right-left-big"
+            "."
+            "footer";
+}
+
+
+.item {
+    background-color: #ba3b44;
+    border: #ba3b44 16px solid;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-spacing: 50px;
+}
+
+#a {
+    grid-area: aside-left;
+}
+
+#b {
+    grid-area: contenter;
+
+}
+
+#c {
+    grid-area: aside-right-large;
+}
+
+#d {
+    grid-area: aside-right-small;
+}
+
+#e {
+    grid-area: aside-right-left-big;
+}
+
+#f {
+    grid-area: footer;
+}
+
+
+@media screen and (min-width: 576px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas:
+            "aside-left aside-right-large aside-right-large"
+            "contenter aside-right-large aside-right-large"
+            "contenter aside-right-left-big aside-right-small"
+            "contenter aside-right-left-big ."
+            "footer footer footer";
+    }
+
+}
